@@ -1,0 +1,6 @@
+POST localhost:8081/mongo/add?firstName=Alexander&lastName=Ambroziak
+
+###
+GET localhost:8081/mongo/find?name=Alexander
+
+###

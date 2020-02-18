@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/mongo")
 public class MainController {
@@ -21,11 +23,16 @@ public class MainController {
         return "saved";
     }
 
-    @GetMapping("/find")
-    public @ResponseBody String findByName (@RequestParam String name){
-        return  customerRepository.findByFirstName(name).firstName;
+    @GetMapping("/findFirstName")
+    public @ResponseBody Customer findByFirstName (@RequestParam String firstName){
+        return  customerRepository.findByFirstName(firstName);
     }
 
-
-
+    @GetMapping("/findLastName")
+    public @ResponseBody List<Customer> findByLastName (@RequestParam String lastName) {
+/*        for (Customer customer : customerRepository.findByLastName(lastName)) {
+            System.out.println(customer);
+        }*/
+        return customerRepository.findByLastName(lastName);
+    }
 }

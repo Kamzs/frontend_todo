@@ -1,4 +1,4 @@
-POST localhost:8081/mongo/add?firstName=Alexander&lastName=Ambroziak
+POST localhost:8081/mongo/add?firstName=Alexander&lastName=Ambrossio
 
 ###
 GET localhost:8081/mongo/findFirstName?firstName=Alexander
@@ -7,6 +7,6 @@ GET localhost:8081/mongo/findFirstName?firstName=Alexander
 GET localhost:8081/mongo/findFirstName?firstName=Artur
 
 ###
-GET localhost:8081/mongo/findLastName?lastName=Ambroziak
+GET localhost:8081/mongo/findLastName?lastName=Ambrossio
 
 ###

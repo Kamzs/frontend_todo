@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringdataMongoApplication implements CommandLineRunner {
 
     @Autowired
-    private CustomerRepository repository;
+    private TaskRepository repository;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringdataMongoApplication.class, args);

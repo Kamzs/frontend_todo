@@ -21,8 +21,10 @@ public class TaskController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity addSingle(@RequestBody Task task){
-        return ResponseEntity.ok(taskRepository.save(task));
+    public ResponseEntity addSingle(@RequestBody List<Task> tasks){
+        for (Task task: tasks){
+            taskRepository.save(task); }
+        return ResponseEntity.ok("{}");
     }
 
     @PutMapping("/update")

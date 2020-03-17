@@ -6,19 +6,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringdataMongoApplication implements CommandLineRunner {
+public class SpringdataMongoApplication{
 
-    @Autowired
-    private TaskRepository repository;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringdataMongoApplication.class, args);
     }
 
-    @Override
-    public void run(String... args) throws Exception {
-
-        repository.deleteAll();
-
-    }
 }

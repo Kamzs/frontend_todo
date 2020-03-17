@@ -2,6 +2,7 @@ package com.example.springdata_mongo;
 
 import jdk.nashorn.internal.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,15 +17,15 @@ public class TaskController {
     TaskRepository taskRepository;
 
     @GetMapping("/findAll")
-    public ResponseEntity<List<Task>> findall(){
-        return ResponseEntity.ok(taskRepository.findAll());
+    public ResponseEntity findall(@RequestParam String fire){
+        return ResponseEntity.ok(taskRepository.findAllByFire(fire));
     }
 
     @PostMapping("/add")
-    public ResponseEntity addSingle(@RequestBody List<Task> tasks){
+    public ResponseEntity add(@RequestBody List<Task> tasks){
         for (Task task: tasks){
             taskRepository.save(task); }
-        return ResponseEntity.ok("{}");
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
     @PutMapping("/update")
@@ -38,5 +39,4 @@ public class TaskController {
         taskRepository.deleteById(id);
         return ResponseEntity.ok(JSONParser.quote("deleted"));
     }
-
 }

@@ -1,9 +1,11 @@
 package com.example.springdata_mongo;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface TaskRepository extends MongoRepository<Task, String> {
+import java.util.List;
 
+public interface TaskRepository extends CrudRepository<Task, String> {
 
+    List<Task> findAllByFire (String fire);
 
 }

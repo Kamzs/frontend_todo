@@ -5,17 +5,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
-@Document(collection = "task")
+@Document
 public class Task {
 
     @Id
     public String id;
 
+    public Task() {}
+
+    public String fire;
     public String name;
     public Date created;
     public Date done;
-
-    public Task() {}
-
 
 }
